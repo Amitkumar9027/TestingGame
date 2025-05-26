@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./Components/Dashboard";
 import CategoryContent from "./Components/CategoryContent";
 import TicTacToe from "./Components/Games/TicTacToe";
 import NumberGuessingGame from "./Components/Games/NumberGuessingGame";
