@@ -1,0 +1,300 @@
+/* Base styles */
+.memory-game-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+.game-header {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+p {
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Progress bar styles */
+.progress-container {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #4CAF50, #81C784);
+  transition: width 0.4s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+}
+
+/* Card grid styles */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.card {
+  position: relative;
+  height: 120px;
+  perspective: 1000px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  transition: transform 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.card .front {
+  background-color: white;
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+.card .front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card .back {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  transform: rotateY(0deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .front {
+  transform: rotateY(360deg);
+}
+
+/* Matched card styles */
+.card.matched {
+  opacity: 0.5;
+  transform: scale(0.95);
+  cursor: default;
+}
+
+.card.matched .front {
+  background-color: #e8f5e9;
+  border: 3px solid #4CAF50;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+  background-color: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.start-button, .play-again-button {
+  background: linear-gradient(to right, #2ecc71, #27ae60);
+  color: white;
+}
+
+.start-button:hover, .play-again-button:hover {
+  background: linear-gradient(to right, #27ae60, #219653);
+  transform: translateY(-2px);
+}
+
+.submit-button {
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: white;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #2980b9, #2472a4);
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.restart-button {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  color: white;
+}
+
+.restart-button:hover {
+  background: linear-gradient(to right, #c0392b, #a53126);
+  transform: translateY(-2px);
+}
+
+/* Stats and messages */
+.stats {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.stats p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.stats p:first-child {
+  font-weight: bold;
+}
+
+.win-message {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.win-message p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .memory-game-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .card {
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .memory-game-container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  
+  .back-button {
+    position: static;
+    margin-bottom: 1rem;
+  }
+  
+  .game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .card {
+    height: 80px;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .progress-text {
+    font-size: 0.8rem;
+  }
+}

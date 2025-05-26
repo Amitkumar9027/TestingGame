@@ -1,0 +1,43 @@
+.dashboard {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard h2 {
+  margin-bottom: 20px;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #34495e;
+}
+
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard li {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.dashboard li:hover {
+  background-color: #34495e;
+}
+
+.dashboard .active {
+  background-color: #3498db;
+  color: white;
+}
+
+.dashboard .active:hover {
+  background-color: #2980b9;
+}
